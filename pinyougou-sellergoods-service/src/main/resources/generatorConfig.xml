@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <classPathEntry location="/Users/xzc/.m2/repository/mysql/mysql-connector-java/5.1.32/mysql-connector-java-5.1.32.jar"/>
+
+    <context id="context" targetRuntime="MyBatis3">
+
+        <!-- 配置pojo的序列化 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection userId="root" password="root" driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/pinyougoudb"/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.pinyougou.pojo" targetProject=".">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.pinyougou.mapper" targetProject=".">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.pinyougou.mapper" type="XMLMAPPER" targetProject=".">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <table schema="pinyougoudb" tableName="tb_address" />
+        <table schema="pinyougoudb" tableName="tb_areas" />
+        <table schema="pinyougoudb" tableName="tb_brand" />
+        <table schema="pinyougoudb" tableName="tb_cities" />
+        <table schema="pinyougoudb" tableName="tb_content" />
+        <table schema="pinyougoudb" tableName="tb_content_category" />
+        <table schema="pinyougoudb" tableName="tb_freight_template" />
+        <table schema="pinyougoudb" tableName="tb_goods" />
+        <table schema="pinyougoudb" tableName="tb_goods_desc" />
+        <table schema="pinyougoudb" tableName="tb_item" />
+        <table schema="pinyougoudb" tableName="tb_item_cat" />
+        <table schema="pinyougoudb" tableName="tb_order" />
+        <table schema="pinyougoudb" tableName="tb_order_item" />
+        <table schema="pinyougoudb" tableName="tb_pay_log" />
+        <table schema="pinyougoudb" tableName="tb_provinces" />
+        <table schema="pinyougoudb" tableName="tb_seckill_goods" />
+        <table schema="pinyougoudb" tableName="tb_seckill_order" />
+        <table schema="pinyougoudb" tableName="tb_seller" />
+        <table schema="pinyougoudb" tableName="tb_specification" />
+        <table schema="pinyougoudb" tableName="tb_specification_option" />
+        <table schema="pinyougoudb" tableName="tb_type_template" />
+        <table schema="pinyougoudb" tableName="tb_user" />
+
+    </context>
+</generatorConfiguration>
