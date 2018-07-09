@@ -1,10 +1,11 @@
 package com.pinyougou.sellergoods.service;
 
-import com.pinyougou.entity.PageResult;
+import entity.PageResult;
 import com.pinyougou.pojo.TbBrand;
 
 
 import java.util.List;
+import java.util.Map;
 
 public interface BrandService {
 
@@ -29,6 +30,7 @@ public interface BrandService {
     //searchPage by example
     PageResult searchPage(int pageNum, int pageSize,TbBrand brand);
 
+    List<Map> selectOptionList();
 
 
 

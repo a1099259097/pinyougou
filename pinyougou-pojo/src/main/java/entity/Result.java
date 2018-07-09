@@ -1,22 +1,22 @@
-package com.pinyougou.entity;
+package entity;
 
 import java.io.Serializable;
 
 public class Result implements Serializable {
-    private boolean status;
+    private boolean success;
     private String message;
 
-    public Result(boolean status, String message) {
-        this.status = status;
+    public Result(boolean success, String message) {
+        this.success = success;
         this.message = message;
     }
 
-    public boolean isStatus() {
-        return status;
+    public boolean isSuccess() {
+        return success;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 
     public String getMessage() {

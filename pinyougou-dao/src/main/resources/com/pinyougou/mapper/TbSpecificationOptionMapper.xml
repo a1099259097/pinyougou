@@ -141,7 +141,10 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByExampleSelective" parameterType="map">
+    <select id="selectOptionList" resultType="map">
+      select id,option_name as text from tb_specification_option
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
     update tb_specification_option
     <set>
       <if test="record.id != null">

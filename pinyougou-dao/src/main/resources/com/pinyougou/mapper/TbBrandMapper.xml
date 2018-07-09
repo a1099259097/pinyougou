@@ -134,6 +134,11 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+
+  <select id="selectOptionList" resultType="map">
+    select id,name as text from tb_brand
+
+  </select>
   <update id="updateByExampleSelective" parameterType="map">
     update tb_brand
     <set>

@@ -1,8 +1,8 @@
 package com.pinyougou.manager.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.pinyougou.entity.PageResult;
-import com.pinyougou.entity.Result;
+import entity.PageResult;
+import entity.Result;
 import com.pinyougou.pojo.TbBrand;
 import com.pinyougou.sellergoods.service.BrandService;
 
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -63,6 +64,7 @@ public class BrandController {
     public Result delectByIds(long[] ids){
         try {
             brandService.delectByIds(ids);
+            System.out.println(new Result(true,"delect successful"));
             return new Result(true,"delect successful");
         }catch (Exception e) {
             e.printStackTrace();
@@ -73,5 +75,10 @@ public class BrandController {
     @RequestMapping("/searchPage")
     public PageResult findPage(int page, int rows, @RequestBody TbBrand brand) {
         return brandService.searchPage(page, rows, brand);
+    }
+
+    @RequestMapping("/selectOptionList")
+    public List<Map> selectOptionList() {
+        return brandService.selectOptionList();
     }
 }

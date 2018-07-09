@@ -1,4 +1,4 @@
-package com.pinyougou.entity;
+package entity;
 
 import com.pinyougou.pojo.TbBrand;
 
@@ -7,9 +7,9 @@ import java.util.List;
 
 public class PageResult implements Serializable {
     private long total;
-    private List<TbBrand> rows;
+    private List rows;
 
-    public PageResult(long total, List<TbBrand> rows) {
+    public PageResult(long total, List rows) {
         this.total = total;
         this.rows = rows;
     }
@@ -22,11 +22,11 @@ public class PageResult implements Serializable {
         this.total = total;
     }
 
-    public List<TbBrand> getRows() {
+    public List getRows() {
         return rows;
     }
 
-    public void setRows(List<TbBrand> rows) {
+    public void setRows(List rows) {
         this.rows = rows;
     }
 }
