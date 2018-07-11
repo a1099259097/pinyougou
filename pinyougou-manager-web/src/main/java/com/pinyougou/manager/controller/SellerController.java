@@ -1,4 +1,5 @@
 package com.pinyougou.manager.controller;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestBody;
@@ -101,7 +102,7 @@ public class SellerController {
 	
 		/**
 	 * 查询+分页
-	 * @param brand
+	 * @param seller
 	 * @param page
 	 * @param rows
 	 * @return
@@ -110,5 +111,19 @@ public class SellerController {
 	public PageResult search(@RequestBody TbSeller seller, int page, int rows  ){
 		return sellerService.findPage(seller, page, rows);		
 	}
-	
+
+
+    /**
+     * updateStatus
+     */
+    @RequestMapping("/updateStatus")
+    public Result updateStatus(String sellerId, String type) {
+        try {
+            sellerService.updateStatus(sellerId,type);
+            return new Result(true,"update successful");
+        }catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,"update fail");
+        }
+    }
 }
